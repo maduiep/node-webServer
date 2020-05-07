@@ -48,12 +48,12 @@ app.get('/projects', (req, res) => {
 })
 
 // /bad - send back json with errorMessage
-app.get('/bad', (req, res) => {
-  res.send({
-    errorMessage: 'Unable to handle request'
-  })
-})
+// app.get('/bad', (req, res) => {
+//   res.send({
+//     errorMessage: 'Unable to handle request'
+//   })
+// })
 
-app.use((req, res, next) => res.render('maintenance.hbs'))
+//app.use((req, res, next) => res.render('maintenance.hbs'))
 
 app.listen(port,'localhost', () => console.log(`Server is up and running on port ${port}`));
