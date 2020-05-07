@@ -1,7 +1,7 @@
 const express = require('express')
 const hbs = require('hbs')
 const fs = require('fs')
-const port = 3000
+const port = process.env.PORT || 3000
 
 var app = express()
 
@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 
   console.log(log)
   fs.appendFile('server.log', log + '\n', (err) => {
-    if(err) {
+    if (err) {
       console.log('Unable to append to sever.log')
     }
   })
@@ -49,4 +49,4 @@ app.get('/bad', (req, res) => {
   })
 })
 
-app.listen(port, 'localhost', () => console.log('Server is up and running'));
+app.listen(port, 'localhost', () => console.log(`Server is up and running on port ${port}`));
