@@ -29,15 +29,21 @@ hbs.registerHelper('getCurrentYear', () => new Date().getFullYear())
 hbs.registerHelper('screamIt', text => text.toUpperCase())
 
 app.get('/', (req, res) => {
-  res.render('home.hbs', {
+  res.render('home', {
     pageTitle: 'Home Page',
     welcomeMessage: 'Welcome to my website'
   })
 })
 
 app.get('/about', (req, res) => {
-  res.render('about.hbs', {
+  res.render('about', {
     pageTitle: 'About Page'
+  })
+})
+
+app.get('/projects', (req, res) => {
+  res.render('projects', {
+    pageTitle: 'Projects'
   })
 })
 
