@@ -21,7 +21,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => res.render('maintenance.hbs'))
 
 app.use(express.static(__dirname + '/public'))
 
@@ -49,4 +48,6 @@ app.get('/bad', (req, res) => {
   })
 })
 
-app.listen(port, 'localhost', () => console.log(`Server is up and running on port ${port}`));
+app.use((req, res, next) => res.render('maintenance.hbs'))
+
+app.listen(port,'localhost', () => console.log(`Server is up and running on port ${port}`));
